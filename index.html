@@ -1,0 +1,308 @@
+<html>
+	
+	<head>
+	
+		<meta 	name="viewport" 
+				content="width=device-width, 
+						initial-scale=1.0, 
+						maximum-scale=1.0, 
+						user-scalable=no">
+
+		<link rel="stylesheet" type="text/css" href="css/game.css"/>
+
+		<link href='https://fonts.googleapis.com/css?family=Catamaran:400,800' rel='stylesheet' type='text/css'>
+	
+	</head>
+
+	<body>
+
+		<article id="gameContainer">
+
+			<div id="stats">
+				<p id="title">Level 1 - Demo</p>
+				<p id="timer">0:60s</p>
+			</div>
+
+			<div id="table">
+
+				<div id="table-upper-section">
+
+					<div id="table-area-2" class="table-area">
+
+						<div id="player-4-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-4-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-4-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div id="table-area-3" class="table-area">
+
+						<div id="player-5-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-5-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-5-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div id="table-area-4" class="table-area">
+
+						<div id="player-6-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-6-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-6-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="table-centre-section">
+
+					<div id="table-area-6" class="table-area">
+
+						<div id="player-3-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-3-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-3-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+					
+					<div id="table-area-7" class="table-area">
+						
+						<div id="common-cards-group" class="cards-group">
+
+							<div id="flop-1-place" class="card-place">
+								<div id="flop-1" class=""></div>
+							</div>
+
+							<div id="flop-2-place" class="card-place">
+								<div id="flop-2" class=""></div>
+							</div>
+
+							<div id="flop-3-place" class="card-place">
+								<div id="flop-3" class=""></div>
+							</div>
+
+							<div id="flop-4-place" class="card-place">
+								<div id="flop-4" class=""></div>
+							</div>
+
+							<div id="flop-5-place" class="card-place">
+								<div id="flop-5" class=""></div>
+							</div>
+
+						</div>
+					
+					</div>
+					
+					<div id="table-area-8" class="table-area">
+
+						<div id="player-7-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-7-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-7-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="table-lower-section">
+
+					<div id="table-area-10" class="table-area">
+
+						<div id="player-8-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-8-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-8-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+					
+					<div id="table-area-11" class="table-area">
+
+						<div id="player-1-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-1-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-1-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div id="table-area-12" class="table-area">
+
+						<div id="player-2-cards-group" class="player-cards cards-group">
+
+							<div class="card-place card1">
+								<div id="player-2-1" class=""></div>
+							</div>
+
+							<div class="card-place card2">
+								<div id="player-2-2" class=""></div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+			<div id="answer">
+
+				<p id="question-repeat">&nbsp;</p>
+
+				<div id="hand-buttons">
+					
+					<button id="hand-straight-flush" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_STRAIGHT_FLUSH )">
+						<span class="hand-icon icon-straight-flush"></span>
+					</button>
+					
+					<button id="hand-four-of-a-kind" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FOUR_OF_A_KIND )">
+						<span class="hand-icon icon-four-of-a-kind"></span>
+					</button>
+
+					<button id="hand-full-house" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FULL_HOUSE )">
+						<span class="hand-icon icon-full-house"></span>
+					</button>
+
+					<button id="hand-flush" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FLUSH )">
+						<span class="hand-icon icon-flush"></span>
+					</button>
+
+					<button id="hand-straight" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_STRAIGHT )">
+						<span class="hand-icon icon-straight"></span>
+					</button>
+
+					<button id="hand-three-of-a-kind" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_THREE_OF_A_KIND )">
+						<span class="hand-icon icon-three-of-a-kind"></span>
+					</button>
+
+					<button id="hand-two-pair" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_TWO_PAIR )">
+						<span class="hand-icon icon-two-pair"></span>
+					</button>
+
+					<button id="hand-one-pair" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_ONE_PAIR )">
+						<span class="hand-icon icon-one-pair"></span>
+					</button>
+
+					<button id="hand-high-card" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_HIGH_CARD )">
+						<span class="hand-icon icon-high-card"></span>
+					</button>
+				</div>
+
+				<div id="answer-review">
+					<button id="review-previous" onclick="game.table.previousReview()"><span></span></button>
+					<span id="answer-description" class="small-text"></span>
+					<button id="review-next" onclick="game.table.nextReview()"><span></span></button>
+				</div>
+			</div>
+
+			<div id="blind">
+
+				<div id="round-result">
+					<div id="round-result-title">
+						<p class="huge-text">Round Complete</p>
+					</div>
+					<div id="round-result-metrics">
+						<div id="round-result-accuracy">
+							<label class="big-text">Accuracy</label>
+						
+								<div id="accuracy-star-1" class="gold-star"><span></span></div>
+								<div id="accuracy-star-2" class="gold-star"><span></span></div>
+								<div id="accuracy-star-3" class="gold-star"><span></span></div>
+								<div id="accuracy-star-4" class="gray-star"><span></span></div>
+							
+						</div>
+						<div id="round-result-speed">
+							<label class="big-text">Speed</label>
+								<div id="speed-star-1" class="gold-star"><span></span></div>
+								<div id="speed-star-2" class="gray-star"><span></span></div>
+								<div id="speed-star-3" class="gray-star"><span></span></div>
+								<div id="speed-star-4" class="gray-star"><span></span></div>
+							
+						</div>
+					</div>
+					<div id="round-result-actions">
+						<button id="action-review-answers" class="secondary-button big-text" onclick="game.reviewRound()">Review Answers</button>
+						<button id="action-play-again" class="primary-button big-text" onclick="game.playAgain()">Play Again</button>
+					</div>
+				</div>
+
+				<div id="result">
+					<div id="correct-icon">
+						<span class="correct">
+					</div>
+					<div id="incorrect-icon">
+						<span class="incorrect">
+					</div>
+				</div>
+
+				<div id="setup">
+					<div id="setup-hint" class="">
+						What hand do you have?
+					</div>
+				</div>
+			</div>
+
+		</article>
+
+		<script type="text/javascript" src="js/lib/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript" src="js/lib/sim-0.26.js"></script>
+		<script type="text/javascript" src="js/combination.js"></script>
+		<script type="text/javascript" src="js/deck.js"></script>
+		<script type="text/javascript" src="js/hits.js"></script>
+		<script type="text/javascript" src="js/rankedStartingHands.js"></script>
+		<script type="text/javascript" src="js/table.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+
+	</body>
+
+</html>

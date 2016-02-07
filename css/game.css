@@ -1,0 +1,1047 @@
+body
+{
+	background-image: url('../img/TableDrop.png');
+	margin: 0px;
+	padding: 0px;
+    overflow: hidden;
+    font-family: 'Catamaran', sans-serif;
+    color: #EEEEEE;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+.big-text
+{
+    font-size: 19px;
+}
+
+.small-text
+{
+    font-size: 12px;
+}
+
+.huge-text
+{
+    font-size: 24px;
+}
+
+@media (min-width: 480px) and (min-height: 300px)
+{
+    body
+    {
+        font-size: 19px;
+    }
+
+    .small-text
+    {
+        font-size: 14px;
+    }
+
+    #hand-button-tip,
+    {
+        font-size: 15px;
+    }
+
+    .big-text
+    {
+        font-size: 25px;
+    }
+
+    .huge-text
+    {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 640px) and (min-height: 400px)
+{
+    body
+    {
+        font-size: 24px;
+    }
+
+    .small-text
+    {
+        font-size: 19px;
+    }
+
+    #hand-button-tip
+    {
+        font-size: 20px;
+    }
+
+    .big-text
+    {
+        font-size: 30px;
+    }
+
+    .huge-text
+    {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 960px) and (min-height: 600px)
+{
+    body
+    {
+        font-size: 30px;
+    }
+
+    .small-text
+    {
+        font-size: 25px;
+    }
+
+    #hand-button-tip
+    {
+        font-size: 26px;
+    }
+
+    .big-text
+    {
+        font-size: 36px;
+    }
+
+    .huge-text
+    {
+        font-size: 41px;
+    }
+}
+
+p
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#gameContainer
+{
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#gameContainer div
+{
+ /   margin: 0;
+/    padding: 0;
+}
+
+#stats
+{
+    height: 10%;
+    width: inherit;
+ /   background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+   / background: #B3ECF7;
+}
+
+#table
+{
+    height: 60%;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../img/BoardLine.svg') no-repeat;
+    background-size: 100%;
+}
+
+#answer
+{
+    height: 30%;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    /background: #B3ECF7;
+    /animation: pulse 3s ease infinite;
+}
+/*
+@keyframes pulse
+{
+    0%
+    {
+        background: rgba(154, 204, 51, 0.1)
+    }
+
+    50%
+    {
+        background: rgba(154, 204, 51, 0.25)
+    }
+
+    100%
+    {
+        background: rgba(154, 204, 51, 0.1)
+    }
+}*/
+
+#answer p
+{
+    text-align: center;
+}
+
+#table-upper-section
+{
+    width: 80%;
+    height: 32%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#table-centre-section
+{
+    width: inherit;
+    height: 36%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#table-lower-section
+{
+    width: 80%;
+    height: 32%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.table-area
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-area-2
+{
+    flex: 1.5;
+}
+
+#table-area-3
+{
+    flex: 1;
+}
+
+#table-area-4
+{
+    flex: 1.5;
+}
+
+#table-area-6
+{
+    flex: 1;
+}
+
+#table-area-7
+{
+    flex: 1.2;
+}
+
+#table-area-8
+{
+    flex: 1;
+}
+
+#table-area-10
+{
+    flex: 1.5;
+}
+
+#table-area-11
+{
+    flex: 1.0;
+}
+
+#table-area-12
+{
+    flex: 1.5;
+}
+
+.card-place
+{
+ /   border: 0.05px rgba(255,255,255,0.5) solid;
+  /  padding: 0.5px;
+  /  border-radius: 2px;
+    display: inline-block;
+  /  background: rgba(30,30,30,0.5);
+}
+
+.cards-group
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#flop-1-place, #flop-2-place, #flop-3-place
+{
+    margin-left: 2px;
+}
+
+#flop-4-place, #flop-5-place
+{
+    margin-left: 5px;
+}
+
+.card1
+{
+	transform: rotate(-10deg) translateX(4px);
+}
+
+.card2
+{
+	transform: rotate(10deg) translateX(-4px);
+}
+
+/* .card-normal
+    Don't use named class to avoid reassign all classes when change card type in JQuery */
+
+.card-place div
+{
+    display: inline-block;
+    width: 52px;
+    height: 83px;
+    background-size: 100%;
+}
+
+.King-Spades
+{
+    background-image: url("../img/cards/King-Spades.svg");
+}
+
+.Queen-Spades
+{
+    background-image: url("../img/cards/Queen-Spades.svg");
+}
+
+.Jack-Spades
+{
+    background-image: url("../img/cards/Jack-Spades.svg");
+}
+
+.Ten-Spades
+{
+    background-image: url("../img/cards/Ten-Spades.svg");
+}
+
+.Nine-Spades
+{
+    background-image: url("../img/cards/Nine-Spades.svg");
+}
+
+.Eight-Spades
+{
+    background-image: url("../img/cards/Eight-Spades.svg");
+}
+
+.Seven-Spades
+{
+    background-image: url("../img/cards/Seven-Spades.svg");
+}
+
+.Six-Spades
+{
+    background-image: url("../img/cards/Six-Spades.svg");
+}
+
+.Five-Spades
+{
+    background-image: url("../img/cards/Five-Spades.svg");
+}
+
+.Four-Spades
+{
+    background-image: url("../img/cards/Four-Spades.svg");
+}
+
+.Three-Spades
+{
+    background-image: url("../img/cards/Three-Spades.svg");
+}
+
+.Two-Spades
+{
+    background-image: url("../img/cards/Two-Spades.svg");
+}
+
+.Ace-Spades
+{
+    background-image: url("../img/cards/Ace-Spades.svg");
+}
+
+.King-Diamonds
+{
+    background-image: url("../img/cards/King-Diamonds.svg");
+}
+
+.Queen-Diamonds
+{
+    background-image: url("../img/cards/Queen-Diamonds.svg");
+}
+
+.Jack-Diamonds
+{
+    background-image: url("../img/cards/Jack-Diamonds.svg");
+}
+
+.Ten-Diamonds
+{
+    background-image: url("../img/cards/Ten-Diamonds.svg");
+}
+
+.Nine-Diamonds
+{
+    background-image: url("../img/cards/Nine-Diamonds.svg");
+}
+
+.Eight-Diamonds
+{
+    background-image: url("../img/cards/Eight-Diamonds.svg");
+}
+
+.Seven-Diamonds
+{
+    background-image: url("../img/cards/Seven-Diamonds.svg");
+}
+
+.Six-Diamonds
+{
+    background-image: url("../img/cards/Six-Diamonds.svg");
+}
+
+.Five-Diamonds
+{
+    background-image: url("../img/cards/Five-Diamonds.svg");
+}
+
+.Four-Diamonds
+{
+    background-image: url("../img/cards/Four-Diamonds.svg");
+}
+
+.Three-Diamonds
+{
+    background-image: url("../img/cards/Three-Diamonds.svg");
+}
+
+.Two-Diamonds
+{
+    background-image: url("../img/cards/Two-Diamonds.svg");
+}
+
+.Ace-Diamonds
+{
+    background-image: url("../img/cards/Ace-Diamonds.svg");
+}
+
+.King-Hearts
+{
+    background-image: url("../img/cards/King-Hearts.svg");
+}
+
+.Queen-Hearts
+{
+    background-image: url("../img/cards/Queen-Hearts.svg");
+}
+
+.Jack-Hearts
+{
+    background-image: url("../img/cards/Jack-Hearts.svg");
+}
+
+.Ten-Hearts
+{
+    background-image: url("../img/cards/Ten-Hearts.svg");
+}
+
+.Nine-Hearts
+{
+    background-image: url("../img/cards/Nine-Hearts.svg");
+}
+
+.Eight-Hearts
+{
+    background-image: url("../img/cards/Eight-Hearts.svg");
+}
+
+.Seven-Hearts
+{
+    background-image: url("../img/cards/Seven-Hearts.svg");
+}
+
+.Six-Hearts
+{
+    background-image: url("../img/cards/Six-Hearts.svg");
+}
+
+.Five-Hearts
+{
+    background-image: url("../img/cards/Five-Hearts.svg");
+}
+
+.Four-Hearts
+{
+    background-image: url("../img/cards/Four-Hearts.svg");
+}
+
+.Three-Hearts
+{
+    background-image: url("../img/cards/Three-Hearts.svg");
+}
+
+.Two-Hearts
+{
+    background-image: url("../img/cards/Two-Hearts.svg");
+}
+
+.Ace-Hearts
+{
+    background-image: url("../img/cards/Ace-Hearts.svg");
+}
+
+.King-Clubs
+{
+    background-image: url("../img/cards/King-Clubs.svg");
+}
+
+.Queen-Clubs
+{
+    background-image: url("../img/cards/Queen-Clubs.svg");
+}
+
+.Jack-Clubs
+{
+    background-image: url("../img/cards/Jack-Clubs.svg");
+}
+
+.Ten-Clubs
+{
+    background-image: url("../img/cards/Ten-Clubs.svg");
+}
+
+.Nine-Clubs
+{
+    background-image: url("../img/cards/Nine-Clubs.svg");
+}
+
+.Eight-Clubs
+{
+    background-image: url("../img/cards/Eight-Clubs.svg");
+}
+
+.Seven-Clubs
+{
+    background-image: url("../img/cards/Seven-Clubs.svg");
+}
+
+.Six-Clubs
+{
+    background-image: url("../img/cards/Six-Clubs.svg");
+}
+
+.Five-Clubs
+{
+    background-image: url("../img/cards/Five-Clubs.svg");
+}
+
+.Four-Clubs
+{
+    background-image: url("../img/cards/Four-Clubs.svg");
+}
+
+.Three-Clubs
+{
+    background-image: url("../img/cards/Three-Clubs.svg");
+}
+
+.Two-Clubs
+{
+    background-image: url("../img/cards/Two-Clubs.svg");
+}
+
+.Ace-Clubs
+{
+    background-image: url("../img/cards/Ace-Clubs.svg");
+}
+
+
+
+.No-Card
+{
+    background-position: 0px 0px;
+    background-size: 0px 0px;
+}
+
+.Hidden-Card
+{
+    background-position: 0px 0px;
+ /   background-size: 100%;
+}
+
+
+button
+{
+    border: rgba(80, 80, 80, 0.0) 2px solid;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    background: none;/rgba(80, 80, 80, 0.5);
+    color: #EEEEEE;
+    font-weight: bold;
+}
+
+button:hover
+{
+    background: rgba(80, 80, 80, 0.75);
+    border: rgba(120, 120, 120, 0.75) 2px solid;
+    cursor: pointer;
+}
+
+.primary-button
+{
+    border: rgba(180, 180, 180, 1.0) 2px solid;
+    box-shadow: 0px 0px 5px #EEEEEE;
+}
+
+.secondary-button
+{
+    border: rgba(120, 120, 120, 1.0) 2px solid;
+    color: #AAAAAA;
+}
+
+.primary-button:hover
+{
+    border: rgba(180, 180, 180, 1.0) 2px solid;
+    background: rgba(120, 120, 120, 0.75);
+}
+
+.secondary-button:hover
+{
+    border: rgba(180, 180, 180, 1.0) 2px solid;
+    background: rgba(120, 120, 120, 0.75);
+}
+
+#hand-buttons
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+#hand-buttons button
+{
+    width: 10%;
+    padding: 2px;
+}
+
+#hand-buttons span
+{
+    display: block;
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 70%;
+}
+
+#hand-button-tip
+{
+
+}
+
+#answer-review
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#review-next
+{
+    background: url("../img/next.svg") no-repeat;
+    width: 30px;
+    background-width: 100%;
+    padding: 0px;
+}
+
+#review-previous
+{
+    background: url("../img/back.svg") no-repeat;
+    width: 30px;
+    background-width: 100%;
+    padding: 0px;
+}
+
+#review-next span,
+#review-previous span
+{
+    display: block;
+    width: 100%;
+    padding-bottom: 236%;
+}
+
+#answer-description
+{
+    width: 100%;
+    flex: 2;
+    text-align: center;
+}
+
+.hand-icon
+{
+    background-position: 0 0;
+    background-size: 100%;
+}
+
+.icon-high-card
+{
+    background-image: url("../img/HighCard.svg");
+}
+
+.icon-one-pair
+{
+    background-image: url("../img/OnePair.svg");
+}
+
+.icon-two-pair
+{
+    background-image: url("../img/TwoPairs.svg");
+}
+
+.icon-three-of-a-kind
+{
+    background-image: url("../img/ThreeOfAKind.svg");
+}
+
+.icon-straight
+{
+    background-image: url("../img/Straight.svg");
+}
+
+.icon-flush
+{
+    background-image: url("../img/Flush.svg");
+}
+
+.icon-full-house
+{
+    background-image: url("../img/FullHouse.svg");
+}
+
+.icon-four-of-a-kind
+{
+    background-image: url("../img/FourOfAKind.svg");
+}
+
+.icon-straight-flush
+{
+    background-image: url("../img/StraightFlush.svg");
+}
+
+#title
+{
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#time
+{
+    text-align: right;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#blind
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#result,
+#setup
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+#round-result
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#correct-icon,
+#incorrect-icon
+{
+    width: 50%;
+}
+
+.incorrect
+{
+    background: url('../img/Incorrect.svg');
+    background-size: 100%;
+    display: block;
+    width: 100%;
+    padding-top: 85%;
+}
+
+.correct
+{
+    background: url('../img/Correct.svg');
+    background-size: 100%;
+    display: block;
+    width: 100%;
+    padding-top: 85%;
+}
+
+.gold-star,
+.gray-star
+{
+    width: 5%;
+    display: inline-block;
+    padding: 0.25%;
+}
+
+.gold-star span
+{
+    background: url('../img/StarGold.svg');
+    width: 100%;
+    background-size: 100%;
+    display: block;
+    padding-top: 95%;
+}
+
+.gray-star span
+{
+    background: url('../img/StarGray.svg');
+    width: 100%;
+    background-size: 100%;
+    display: block;
+    padding-top: 95%;
+}
+
+#round-result-title
+{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: bold;
+ /   background: red;
+}
+
+#round-result-metrics
+{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+/    background: blue;
+}
+
+#round-result-actions
+{
+    width: 100%;
+    height: 25%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ /   background: yellow;
+}
+
+#round-result-accuracy,
+#round-result-speed
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#round-result-accuracy
+{
+    padding-bottom: 10%;
+}
+
+#round-result-accuracy label,
+#round-result-speed label
+{
+    text-align: right;
+    width: 20%;
+    padding-right: 30px;
+    font-weight: bold;
+}
+
+#action-play-again
+{
+    margin-left: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#action-review-answers
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#setup-hint
+{
+
+}
+
+.blowout
+{
+    animation: aniblowout ease-in 1.5s;
+}
+
+@keyframes aniblowout
+{
+    0%
+    {
+        transform: scale(1);
+    }
+
+    35%
+    {
+        transform: scale(4);
+    }
+
+    100%
+    {
+        transform: translateY(-2000px);
+    }
+}
+
+.fade2
+{
+    animation: anifade ease-in 2s forwards;
+}
+
+.fade1
+{
+    animation: anifade ease-in 1s forwards;
+}
+
+@keyframes anifade
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+.flyOut
+{
+    animation: aniflyout ease-in 1s forwards;
+}
+
+.flyin
+{
+    animation: aniflyin ease-out 1s forwards;
+}
+
+@keyframes aniflyout
+{
+    0%
+    {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    100%
+    {
+        transform: translate(2000px, 2000px) rotate(530deg);
+    }
+}
+
+@keyframes aniflyin
+{
+    0%
+    {
+        transform: translate(2000px, 2000px) rotate(530deg);
+    }
+
+    100%
+    {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+.slideDown
+{
+    animation: anislidedown ease-out 1s forwards;
+}
+
+.slideUp
+{
+    animation: anislideup ease-out 1s forwards;
+}
+
+@keyframes anislidedown
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+
+    100%
+    {
+        transform: translateY(500px);
+    }
+}
+
+@keyframes anislideup
+{
+    0%
+    {
+        transform: translateY(500px);
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+    }
+}

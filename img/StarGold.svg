@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X5 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 55140 52440"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil3 {fill:#D9DADA}
+    .fil4 {fill:#EBECEC}
+    .fil2 {fill:#FEFEFE}
+    .fil1 {fill:#FCF4AA}
+    .fil0 {fill:#FEE853}
+   ]]>
+  </style>
+    <mask id="id0">
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="11592.4" y1="6908.15" x2="35981.2" y2="37340.2">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </linearGradient>
+     <rect style="fill:url(#id1)" x="8739" y="9189" width="30095" height="25870"/>
+    </mask>
+    <mask id="id2">
+  <linearGradient id="id3" gradientUnits="userSpaceOnUse" x1="11592.4" y1="6908.15" x2="35981.2" y2="37340.2">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </linearGradient>
+     <rect style="fill:url(#id3)" x="8739" y="9189" width="30095" height="25870"/>
+    </mask>
+ </defs>
+  <g id="Golden">
+   <path class="fil0" d="M27566 0c2573,6120 5146,12241 7718,18361 6616,556 13232,1111 19847,1667 -5026,4338 -10051,8676 -15077,13014l4548 19391 -17037 -10318 -17037 10318 4548 -19391 -15077 -13014 19847 -1667 7718 -18361z"/>
+   <path class="fil1" d="M27566 9192l-5271 12538 -13553 1138 10296 8887 -3106 13241 11634 -7045 11634 7045 -3106 -13241 1633 -1410c2887,-2492 5775,-4985 8662,-7477 -3801,-319 -7602,-639 -11403,-958l-2150 -180 -836 -1989c-1478,-3516 -2956,-7033 -4435,-10549z"/>
+   <path class="fil2" style="mask:url(#id0)" d="M27566 9192l-5271 12538 -13553 1138 10296 8887 -774 3301c9490,-1473 17215,-6375 20568,-12823l-3845 -323 -2150 -180 -836 -1989c-1478,-3516 -2956,-7033 -4435,-10549z"/>
+  </g>
+ 
+</svg>
