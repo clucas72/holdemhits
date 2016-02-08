@@ -1,0 +1,129 @@
+#table-upper-section
+{
+    width: 80%;
+    height: 32%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#table-centre-section
+{
+    width: inherit;
+    height: 36%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#table-lower-section
+{
+    width: 80%;
+    height: 32%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.table-area
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-area-2
+{
+    flex: 1.5;
+}
+
+#table-area-3
+{
+    flex: 1;
+}
+
+#table-area-4
+{
+    flex: 1.5;
+}
+
+#table-area-6
+{
+    flex: 1;
+}
+
+#table-area-7
+{
+    flex: 1.2;
+}
+
+#table-area-8
+{
+    flex: 1;
+}
+
+#table-area-10
+{
+    flex: 1.5;
+}
+
+#table-area-11
+{
+    flex: 1.0;
+}
+
+#table-area-12
+{
+    flex: 1.5;
+}
+
+.card-place
+{
+ /   border: 0.05px rgba(255,255,255,0.5) solid;
+  /  padding: 0.5px;
+  /  border-radius: 2px;
+    display: inline-block;
+  /  background: rgba(30,30,30,0.5);
+}
+
+.cards-group
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#flop-1-place, #flop-2-place, #flop-3-place
+{
+    margin-left: 2px;
+}
+
+#flop-4-place, #flop-5-place
+{
+    margin-left: 5px;
+}
+
+.card1
+{
+	transform: rotate(-10deg) translateX(4px);
+}
+
+.card2
+{
+	transform: rotate(10deg) translateX(-4px);
+}
+
+/* .card-normal
+    Don't use named class to avoid reassign all classes when change card type in JQuery */
+
+.card-place div
+{
+    display: inline-block;
+    width: 52px;
+    height: 83px;
+    background-size: 100%;
+}

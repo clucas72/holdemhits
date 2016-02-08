@@ -1,0 +1,117 @@
+.blowout
+{
+    animation: aniblowout ease-in 1.5s;
+}
+
+@keyframes aniblowout
+{
+    0%
+    {
+        transform: scale(1);
+    }
+
+    35%
+    {
+        transform: scale(4);
+    }
+
+    100%
+    {
+        transform: translateY(-2000px);
+    }
+}
+
+.fade2
+{
+    animation: anifade ease-in 2s forwards;
+}
+
+.fade1
+{
+    animation: anifade ease-in 1s forwards;
+}
+
+@keyframes anifade
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+.flyOut
+{
+    animation: aniflyout ease-in 1s forwards;
+}
+
+.flyin
+{
+    animation: aniflyin ease-out 1s forwards;
+}
+
+@keyframes aniflyout
+{
+    0%
+    {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    100%
+    {
+        transform: translate(2000px, 2000px) rotate(530deg);
+    }
+}
+
+@keyframes aniflyin
+{
+    0%
+    {
+        transform: translate(2000px, 2000px) rotate(530deg);
+    }
+
+    100%
+    {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+.slideDown
+{
+    animation: anislidedown ease-out 1s forwards;
+}
+
+.slideUp
+{
+    animation: anislideup ease-out 1s forwards;
+}
+
+@keyframes anislidedown
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+
+    100%
+    {
+        transform: translateY(500px);
+    }
+}
+
+@keyframes anislideup
+{
+    0%
+    {
+        transform: translateY(500px);
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
