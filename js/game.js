@@ -35,7 +35,7 @@ var game = {
       game.inRound = true;
  
       game.questionsForReview = [];
-      game.table.startScenario ( Hits () );
+      game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_HAND_ON_FLOP ) );
     },
 
     endRound: function ()
