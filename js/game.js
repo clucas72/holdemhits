@@ -28,6 +28,7 @@ var game = {
     questionsForReview: [],
     inReview: false,
     reviewIndex: 0,
+    gameSettings: GameSettings (),
 
     playAgain: function ()
     {

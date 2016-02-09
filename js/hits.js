@@ -167,7 +167,12 @@ function getRandomMaxHandRanking ( min, max, control )
 
 		nextRandomSeed: function ()
 		{
-			var minHandRanking = getRandomMaxHandRanking ();
+			var minHandRanking = 200;
+
+			if ( game.gameSettings.favourPremiumPreFlopHands )
+			{
+				minHandRanking = getRandomMaxHandRanking ();
+			}
 
 			do
 			{
