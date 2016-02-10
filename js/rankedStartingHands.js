@@ -5,9 +5,9 @@
 ( function ( global )
 {
 	
-	var RankedStartingHand = function ( ordinal1, ordinal2, suited ) 
+	var RankedStartingHand = function ( ordinal1, ordinal2, suited, names ) 
 	{
-		return new RankedStartingHand.init ( ordinal1, ordinal2, suited );
+		return new RankedStartingHand.init ( ordinal1, ordinal2, suited, names );
 	}
 
 	// Object literal for a RankedStartingHand which includes methods and attributes
@@ -28,7 +28,23 @@
 
 			var suitMatch = card1.suit === card2.suit;
 
-			return ordinalsMatch && ( !this.suited || ( this.suited && suitMatch ) );
+			return ordinalsMatch && this.suited === suitMatch;
+		},
+
+		getName: function ()
+		{
+			var handName = deck.ORDINAL_NAMES [ this.ordinal1 ] + "-" + deck.ORDINAL_NAMES [ this.ordinal2 ];
+
+			if ( this.suited )
+			{
+				handName += " Suited";
+			}
+			else
+			{
+				handName += " Unsuited";
+			}
+
+			return handName;
 		}
 	};
 
@@ -165,7 +181,7 @@
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SEVEN, global.deck.SIX, false, [ "Trombones", "Union Oil", "Philadelphia" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.EIGHT, global.deck.THREE, true, [ "Raquel Welch" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.THREE, global.deck.TWO, true, [ "Can of Corn" ] ) );
-	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SIX, global.deck.TWO, true, [ "Ainswroth" ] ) );
+	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SIX, global.deck.TWO, true, [ "Ainsworth" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.QUEEN, global.deck.SEVEN, false, [ "Computer Hand" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.JACK, global.deck.SEVEN, false, [ "Jack Daniel's" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.FOUR, false, [ ] ) );
@@ -173,7 +189,7 @@
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.EIGHT, global.deck.SIX, false, [ "Maxwell Smart" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.THREE, false, [ "King Crab", "Sizzler", "Three Kings", "Alaska Hand" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SIX, global.deck.FIVE, false, [ ] ) );
-	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.QUEEN, global.deck.SIX, false, [ ] ) );
+	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.QUEEN, global.deck.SIX, false, [ "PB&J" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SEVEN, global.deck.TWO, true, [ "Velvet Hammer" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.TWO, false, [ ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.FIVE, global.deck.FOUR, false, [ "Jesse James", "Colt 45", "Moneymaker" ] ) );

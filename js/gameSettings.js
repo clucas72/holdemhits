@@ -16,7 +16,10 @@
 		favourPremiumPreFlopHands: true,
 
 		// For scenario 0 this determines the ranking leeway (above AND below) for correct answers
-		handRankingLeeway: 30
+		handRankingLeeway: 30,
+
+		// Length of time that a round takes
+		roundTimeSeconds: 60
 	};
 
 	// Init function

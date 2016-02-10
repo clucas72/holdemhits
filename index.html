@@ -202,43 +202,60 @@
 
 				<p id="question-repeat">&nbsp;</p>
 
-				<div id="hand-buttons">
-					
-					<button id="hand-straight-flush" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_STRAIGHT_FLUSH )">
-						<span class="hand-icon icon-straight-flush"></span>
-					</button>
-					
-					<button id="hand-four-of-a-kind" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FOUR_OF_A_KIND )">
-						<span class="hand-icon icon-four-of-a-kind"></span>
-					</button>
+				<div id="answer-section">
+					<div id="hand-ranking">
+						<!-- <div class="slider">
+							<span></span>
+							<div id="thumb" class="handle">
+							</div>
+						</div> -->
+						
+						<input id="handRankSlider" type="range" min="1" max="169" step="any" oninput="game.handRankSliderUpdated ( this.value )"/>
 
-					<button id="hand-full-house" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FULL_HOUSE )">
-						<span class="hand-icon icon-full-house"></span>
-					</button>
+						<p>
+							<span id="handRankSliderNote">Ranks 47 of 169, pretty good</span>
+							<button class="primary-button" onclick="game.table.answer ( game.selectedHandRankingValue )">OK</button>
+						</p>
+					</div>
+	<!-- 
+					<div id="hand-buttons">
+						
+						<button id="hand-straight-flush" class="hand-button" onclick="game.table.answer ( deck.HAND_STRAIGHT_FLUSH )">
+							<span class="hand-icon icon-straight-flush"></span>
+						</button>
+						
+						<button id="hand-four-of-a-kind" class="hand-button" onclick="game.table.answer ( deck.HAND_FOUR_OF_A_KIND )">
+							<span class="hand-icon icon-four-of-a-kind"></span>
+						</button>
 
-					<button id="hand-flush" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_FLUSH )">
-						<span class="hand-icon icon-flush"></span>
-					</button>
+						<button id="hand-full-house" class="hand-button" onclick="game.table.answer ( deck.HAND_FULL_HOUSE )">
+							<span class="hand-icon icon-full-house"></span>
+						</button>
 
-					<button id="hand-straight" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_STRAIGHT )">
-						<span class="hand-icon icon-straight"></span>
-					</button>
+						<button id="hand-flush" class="hand-button" onclick="game.table.answer ( deck.HAND_FLUSH )">
+							<span class="hand-icon icon-flush"></span>
+						</button>
 
-					<button id="hand-three-of-a-kind" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_THREE_OF_A_KIND )">
-						<span class="hand-icon icon-three-of-a-kind"></span>
-					</button>
+						<button id="hand-straight" class="hand-button" onclick="game.table.answer ( deck.HAND_STRAIGHT )">
+							<span class="hand-icon icon-straight"></span>
+						</button>
 
-					<button id="hand-two-pair" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_TWO_PAIR )">
-						<span class="hand-icon icon-two-pair"></span>
-					</button>
+						<button id="hand-three-of-a-kind" class="hand-button" onclick="game.table.answer ( deck.HAND_THREE_OF_A_KIND )">
+							<span class="hand-icon icon-three-of-a-kind"></span>
+						</button>
 
-					<button id="hand-one-pair" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_ONE_PAIR )">
-						<span class="hand-icon icon-one-pair"></span>
-					</button>
+						<button id="hand-two-pair" class="hand-button" onclick="game.table.answer ( deck.HAND_TWO_PAIR )">
+							<span class="hand-icon icon-two-pair"></span>
+						</button>
 
-					<button id="hand-high-card" class="hand-button" onclick="game.table.answerWithHand ( deck.HAND_HIGH_CARD )">
-						<span class="hand-icon icon-high-card"></span>
-					</button>
+						<button id="hand-one-pair" class="hand-button" onclick="game.table.answer ( deck.HAND_ONE_PAIR )">
+							<span class="hand-icon icon-one-pair"></span>
+						</button>
+
+						<button id="hand-high-card" class="hand-button" onclick="game.table.answer ( deck.HAND_HIGH_CARD )">
+							<span class="hand-icon icon-high-card"></span>
+						</button>
+					</div> -->
 				</div>
 
 				<div id="answer-review">
@@ -296,7 +313,6 @@
 			</div>
 
 		</article>
-<script type="text/javascript" src="js/hits.js"></script>
 
 		<script type="text/javascript" src="js/lib/jquery-2.2.0.min.js"></script>
 		<script type="text/javascript" src="js/lib/sim-0.26.js"></script>
@@ -307,6 +323,7 @@
 		<script type="text/javascript" src="js/table.js"></script>
 		<script type="text/javascript" src="js/gameSettings.js"></script>
 		<script type="text/javascript" src="js/game.js"></script>
+		<script type="text/javascript" src="js/drag.js"></script>
 
 	</body>
 

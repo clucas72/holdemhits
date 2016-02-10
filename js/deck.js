@@ -4,12 +4,6 @@
  */
 ( function ( global )
 {
-	var SUIT_NAMES = [ "Hearts", "Clubs", "Diamonds", "Spades" ];
-
-	var ORDINAL_NAMES = [ "Ace", "Two", "Three", "Four", "Five", 
-						  "Six", "Seven", "Eight", "Nine", "Ten", 
-						  "Jack", "Queen", "King" ];
-
 	var Deck = function() 
 	{
 		return new Deck.init();
@@ -127,6 +121,13 @@
 			"Four of a Kind",
 			"Straight Flush"
 		],
+
+		SUIT_NAMES: [ "Hearts", "Clubs", "Diamonds", "Spades" ],
+
+		ORDINAL_NAMES: [ "Ace", "Two", "Three", "Four", "Five", 
+						  "Six", "Seven", "Eight", "Nine", "Ten", 
+						  "Jack", "Queen", "King" ],
+
 
 		/**
 		 * Function to return the array of cards
@@ -420,6 +421,34 @@
 			}
 
 			throw "hand not matched!";
+		},
+
+		getHandRankingTagLine: function ( ranking )
+		{
+			if ( ranking <= 10 )
+			{
+				return "Premium";
+			}
+			else if ( ranking <= 25 )
+			{
+				return "Good";
+			}
+			else if ( ranking <= 50 )
+			{
+				return "Okay";
+			}
+			else if ( ranking <= 100 )
+			{
+				return "Rough";
+			}
+			else if ( ranking <= 130 )
+			{
+				return "Bad";
+			}
+			else
+			{
+				return "Awful";
+			}
 		}
 
 	};
@@ -456,7 +485,7 @@
 		 */
 		getName: function ()
 		{
-			return ORDINAL_NAMES [ this.ordinal ] + "-" + SUIT_NAMES [ this.suit ];
+			return Deck.prototype.ORDINAL_NAMES [ this.ordinal ] + "-" + Deck.prototype.SUIT_NAMES [ this.suit ];
 		},
 
 		getIndex: function ()

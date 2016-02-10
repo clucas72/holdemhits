@@ -221,11 +221,11 @@
       }
     },
 
-    answerWithHand: function ( hand )
+    answer: function ( answerValue )
     {
       if ( game.inRound )
       {
-        var isCorrect = game.currentScenario.isCorrectAnswer ( hand );
+        var isCorrect = game.currentScenario.isCorrectAnswer ( answerValue );
 
         $("#blind").show ();
         $("#result").show ().removeClass ().css({ opacity: 1 });
@@ -250,7 +250,7 @@
         $("#result").addClass ( "fade1" );
 
         // TODO should have a class to capture this data
-        game.questionsForReview.push ( [ game.currentScenario, game.currentScenario.scenarioSeed, hand ] );
+        game.questionsForReview.push ( [ game.currentScenario, game.currentScenario.scenarioSeed, answerValue ] );
       }
     },
 
@@ -269,7 +269,7 @@
       game.table.repeatScenario ();
 
       $("#title").text ( "Seed #" + game.currentScenario.scenarioSeed );
-      $("#hand-buttons").hide ();
+      $("#answer-section").hide ();
       $("#answer-review").show ();
 
       $("#question-repeat").html ( "Hit " + ( index + 1 ) + " of " + game.questionsForReview.length + ": " + game.currentScenario.getName () );

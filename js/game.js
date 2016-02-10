@@ -29,6 +29,7 @@ var game = {
     inReview: false,
     reviewIndex: 0,
     gameSettings: GameSettings (),
+    selectedHandRankingValue: 0,
 
     playAgain: function ()
     {
@@ -36,7 +37,7 @@ var game = {
       game.inRound = true;
  
       game.questionsForReview = [];
-      game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_HAND_ON_FLOP ) );
+      game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING ) );
     },
 
     endRound: function ()
@@ -137,12 +138,32 @@ var game = {
       game.table.review ( game.reviewIndex );
     },
 
+    resetKnobWidth: function ()
+    {
+      var styles = document.getElementById ( "sliderKnobWidthStyles" );
+
+      if ( !styles )
+      {
+        styles = document.createElement('style');
+        styles.setAttribute ( "id", "sliderKnobWidthStyles" );
+        document.body.appendChild ( styles );
+      }
+
+      var slider = document.getElementById ( "handRankSlider" );
+
+      var width = ( this.gameSettings.handRankingLeeway * 2 / 169 ) * slider.offsetWidth;
+
+      styles.textContent = "input[type=range]::-ms-thumb { width: " + width + "px }";
+      styles.textContent += "input[type=range]::-moz-range-thumb { width: " + width + "px }";
+      styles.textContent += "input[type=range]::-webkit-slider-thumb { width: " + width + "px }";
+    },
+
     updateTimer: function ()
     {
       if ( game.inRound )
       {
         var elapsedTime = Date.now () - game.table.startTime;
-        var seconds = 60 - Math.round ( elapsedTime / 1000 );
+        var seconds = game.gameSettings.roundTimeSeconds - Math.round ( elapsedTime / 1000 );
 
         if ( seconds <= 0 )
         {
@@ -160,6 +181,13 @@ var game = {
           }
         }
       }
+    },
+
+    handRankSliderUpdated: function ( value )
+    {
+      var tagline = deck.getHandRankingTagLine ( Math.round ( value ) );
+      this.selectedHandRankingValue = Math.round ( value );
+      document.getElementById ( "handRankSliderNote" ).innerHTML = "" + this.selectedHandRankingValue + " <small>(+/-" + this.gameSettings.handRankingLeeway + ")</small> out of 169 hands - " + tagline;
     }
   }
   
@@ -209,6 +237,7 @@ var game = {
     var gameCentreX = newGameX + ( newGameWidth / 2 );
     var gameCentreY = newGameY + ( newGameHeight / 2 );
 
+    game.resetKnobWidth ();
 
     
 
@@ -291,7 +320,7 @@ $( "#hand-high-card" ).data ( "tip", deck.HAND_HIGH_CARD );
 // Start the scenario
 //game.playAgain ();
 
-setInterval(game.updateTimer, 300);
+
 
 $("#result").hide();
 $("#setup").hide();
@@ -300,4 +329,7 @@ $("#stats").hide ();
 $("#table").hide ();
 $("#answer").hide ();
 
+
 game.playAgain ();
+
+setInterval(game.updateTimer, 300);

@@ -53,7 +53,7 @@ function getRandomMaxHandRanking ( min, max, control )
 	// Object literal for scenario factory
 	ScenarioFactory.prototype = 
 	{
-		SCENARIO_PREFLOP_HAND_VALUE: 0,
+		SCENARIO_PREFLOP_HAND_RANKING: 0,
 		SCENARIO_HAND_ON_FLOP: 1,
 		SCENARIO_POSSIBLE_BEATS_AT_FLOP: 2,
 		SCENARIO_DRAWS_AT_TURN_AND_RIVER: 3,
@@ -255,11 +255,161 @@ function getRandomMaxHandRanking ( min, max, control )
 	HandOnFlopScenario.init = function ()
 	{
 		var self = this;
+		self.scenarioNumber = global.scenarioFactory.SCENARIO_HAND_ON_FLOP;
 	}
 
 	HandOnFlopScenario.init.prototype = HandOnFlopScenario.prototype;
 
 	global.scenarioFactory.scenarioInstances [ global.scenarioFactory.SCENARIO_HAND_ON_FLOP ] = HandOnFlopScenario ();
+
+} ( window ) );
+
+
+
+
+
+
+/**
+ * Immediately invoked anonymous function to setup our PreflopHandRanking scenario class
+ */
+( function ( global )
+{	
+	var PreflopHandRanking = function() 
+	{
+		return new PreflopHandRanking.init();
+	}
+
+	// Object literal for HandOnFlopScenario which includes methods for the library
+	PreflopHandRanking.prototype = 
+	{
+		/**
+		 * Counts of possible scenarios
+		 * https://www.mathsisfun.com/combinatorics/combinations-permutations-calculator.html
+		 */ 
+		holeCardCombinations: 1326, // pick 2 from 52
+
+		nextRandomSeed: function ()
+		{
+			//var minHandRanking = 200;
+
+			//if ( game.gameSettings.favourPremiumPreFlopHands )
+			//{
+			//	minHandRanking = getRandomMaxHandRanking ();
+			//}
+
+			//do
+			//{
+				this.scenarioSeed = getRandomInt ( 1, this.holeCardCombinations ) - 1;
+				this.setCardsToSeed ();			
+			//}
+			//while ( this.handRanking > minHandRanking );
+		},
+
+		setCardsToSeed: function ()
+		{	
+			var comb = Combination ( 52, 2, [] );
+			var holeCards = comb.element ( this.scenarioSeed );
+	
+			this.commonCards = [ 
+								null, 
+								null, 
+								null, 
+								null, 
+								null
+						  ];
+
+			this.playerCards = [ 
+								[ holeCards [ 0 ], holeCards [ 1 ] ],
+								[ null, null ],
+								[ null, null ],
+								[ null, null ],
+								[ null, null ],
+								[ null, null ],
+								[ null, null ],
+								[ null, null ]
+						  ];
+
+			this.usedCardIDs = [
+									'player-1-1',
+									'player-1-2'
+							];
+
+
+			this.handRanking = deck.getHandRanking ( holeCards [ 0 ], holeCards [ 1 ] );
+
+			var rankedStartingHand = deck.rankedStartingHands [ this.handRanking - 1 ];
+
+
+			console.log ( this.scenarioSeed + " >> " + this.handRanking + " >> " + rankedStartingHand.getName () );// + " >> " + holeCards [ 0 ] + " >> " + holeCards [ 1 ] );
+		},
+
+		getName: function ()
+		{
+			return "How does your hand rank?";
+		},
+
+		isCorrectAnswer: function ( answer )
+		{
+			return answer - game.gameSettings.handRankingLeeway <= this.handRanking && answer + game.gameSettings.handRankingLeeway >= this.handRanking;
+		},
+
+		getAnswerExplanation: function ( answeredRanking )
+		{
+			var rankedStartingHand = deck.rankedStartingHands [ this.handRanking - 1 ];
+			
+			var answer = "";
+
+			if ( this.isCorrectAnswer ( answeredRanking ) )
+			{
+				answer = "Yes, " + answeredRanking + " is close enough!";
+			}
+			else
+			{
+				answer = "No, " + answeredRanking + " is too far off.";
+			}
+
+			answer += " " + rankedStartingHand.getName () + " ranks " + this.handRanking + " / 169 in Texas Hold'em."
+
+			if ( !rankedStartingHand.names || rankedStartingHand.names.length == 0 )
+			{
+				answer += "<br/>This hand doesn't have any names that we know about.";
+			}
+			else
+			{
+				answer += "<br/><small>Slang names: ";
+
+				for ( var i = 0; i < rankedStartingHand.names.length; i ++ )
+				{
+					answer += "&#8220;" + rankedStartingHand.names [ i ] + "&#8221;";
+
+					if ( i < rankedStartingHand.names.length - 1 && rankedStartingHand.names.length > 2 )
+					{
+						answer += ", ";
+					}
+
+					if ( i == rankedStartingHand.names.length - 2 )
+					{
+						answer += "or ";
+					}
+				}
+
+				answer += ".</small>"
+			}
+
+			return answer;
+		}
+	};
+
+	// Init function
+	PreflopHandRanking.init = function ()
+	{
+		var self = this;
+		self.scenarioNumber = global.scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING;
+	}
+
+	PreflopHandRanking.init.prototype = PreflopHandRanking.prototype;
+
+	global.scenarioFactory.scenarioInstances [ global.scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING ] = PreflopHandRanking ();
 
 } ( window ) );
 
