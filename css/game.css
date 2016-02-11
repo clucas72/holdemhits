@@ -571,7 +571,7 @@ button:hover
 input[type=range]
 {
     -webkit-appearance: none;
-    margin: 5px 0px 0px 0px;
+    margin: 25px 0px 5px 0px;
     width: 90%;
 }
 

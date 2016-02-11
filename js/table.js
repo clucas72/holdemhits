@@ -14,7 +14,6 @@
     // No Card and Hidden Card (Back) constants
     HIDDEN_CARD: -1,
     NO_CARD: -2,
-    startTime: null,
 
     /**
      * Centres an element using it's offsetWidth and offsetHeight around the centre point
@@ -173,10 +172,22 @@
 
     startScenario: function ( scenarioInstance )
     {
-      this.startTime = Date.now ();
-
       game.currentScenario = scenarioInstance;
-      game.table.repeatScenario ();
+
+      if ( game.currentScenario.scenarioNumber === scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING )
+      {
+        console.log ( "A" );
+        $("#hand-ranking").show ();
+        $("#hand-buttons").hide ();
+      }
+      else if ( game.currentScenario.scenarioNumber === scenarioFactory.SCENARIO_HAND_ON_FLOP )
+      {
+        console.log ( "B" );
+        $("#hand-buttons").show ();
+        $("#hand-ranking").hide ();
+      }
+
+      game.table.showScenario ();
     },
 
     finalizeScenarioSetup: function ()
@@ -192,7 +203,7 @@
       }
     },
 
-    repeatScenario: function ()
+    showScenario: function ()
     {      
       if ( game.inRound || game.inReview )
       {
@@ -243,7 +254,7 @@
         game.answered ++;
 
 
-        window.setTimeout ( this.repeatScenario, 500 );
+        window.setTimeout ( game.nextScenario, 500 );
         this.flyOut ();
 
         $("#answer").removeClass ().addClass ( "slideDown" );

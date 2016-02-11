@@ -30,14 +30,31 @@ var game = {
     reviewIndex: 0,
     gameSettings: GameSettings (),
     selectedHandRankingValue: 0,
+    startTime: null,
 
     playAgain: function ()
     {
+      this.startTime = Date.now ();
+
       game.table.displayGameTable ( true );
       game.inRound = true;
  
       game.questionsForReview = [];
-      game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING ) );
+      game.nextScenario ();
+    },
+
+    nextScenario: function ()
+    {
+      var r = getRandomInt ( 1, 2 );
+
+      if ( r === 1 )
+      {
+        game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING ) );
+      }
+      else
+      {
+        game.table.startScenario ( scenarioFactory.getScenarioInstance ( scenarioFactory.SCENARIO_HAND_ON_FLOP ) ); 
+      }
     },
 
     endRound: function ()
@@ -162,7 +179,7 @@ var game = {
     {
       if ( game.inRound )
       {
-        var elapsedTime = Date.now () - game.table.startTime;
+        var elapsedTime = Date.now () - game.startTime;
         var seconds = game.gameSettings.roundTimeSeconds - Math.round ( elapsedTime / 1000 );
 
         if ( seconds <= 0 )

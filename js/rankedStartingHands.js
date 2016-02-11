@@ -94,7 +94,7 @@
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.ACE, global.deck.FOUR, true, [ "Transvestite" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.ACE, global.deck.SIX, true, [ "" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.ACE, global.deck.THREE, true, [ "Baskin Robbins", "Ashtray" ] ) );
-	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.TEN, false, [ "Katie", "Bit Al" ] ) );
+	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.TEN, false, [ "Katie", "Big Al" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.KING, global.deck.EIGHT, true, [ "Kokomo", "Kate" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.SEVEN, global.deck.SEVEN, false, [ "Hockey Sticks", "Mullets" ] ) );
 	global.deck.rankedStartingHands.push ( RankedStartingHand ( global.deck.QUEEN, global.deck.TEN, false, [ "Quint", "Robert Varkonyi" ] ) );

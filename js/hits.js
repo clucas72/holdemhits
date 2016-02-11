@@ -336,11 +336,6 @@ function getRandomMaxHandRanking ( min, max, control )
 
 
 			this.handRanking = deck.getHandRanking ( holeCards [ 0 ], holeCards [ 1 ] );
-
-			var rankedStartingHand = deck.rankedStartingHands [ this.handRanking - 1 ];
-
-
-			console.log ( this.scenarioSeed + " >> " + this.handRanking + " >> " + rankedStartingHand.getName () );// + " >> " + holeCards [ 0 ] + " >> " + holeCards [ 1 ] );
 		},
 
 		getName: function ()
@@ -412,8 +407,3 @@ function getRandomMaxHandRanking ( min, max, control )
 	global.scenarioFactory.scenarioInstances [ global.scenarioFactory.SCENARIO_PREFLOP_HAND_RANKING ] = PreflopHandRanking ();
 
 } ( window ) );
-
-
-
-
-
